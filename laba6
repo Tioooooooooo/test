@@ -1,0 +1,44 @@
+#1
+def a(n):
+    return n % 3 == 0
+
+b = int(input("введите число: \n"))
+print (a(b))
+
+#2
+def a(x):
+    return 100/x
+
+try:
+    num = float(input("введите число: \n")) #float превращает ввод в дробное число
+    print (a(num))
+except ValueError: #ловит ошибки
+    print("ошибка.введено не число")
+except ZeroDivisionError:
+    print ("ошибка.деление на ноль")
+
+#3
+def a(day, mouth, year):
+    return day * mouth == year % 100
+day = int(input("введите день (1-31): \n"))
+mouth = int(input("введите месяц (1-12): \n"))
+year = int(input("введите день (например,2026): \n"))
+
+if a(day, mouth, year):
+    print ("магическая дата")
+else:
+    print ("не магическая дата")
+
+#4
+def a(ticket):
+    mid = len(ticket) // 2
+    first = sum(map(int, ticket[:mid]))
+    second = sum(map(int, ticket[mid:]))
+    return first == second
+
+ticket= input("ведите номер билета(четное количество цифр: \n")
+
+if a(ticket):
+    print ("счастливый билет")
+else:
+    print ("обычный билет")
